@@ -32,6 +32,7 @@
 	<link rel="stylesheet" href="css/glightbox.min.css">
 	<link rel="stylesheet" href="css/aos.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
 
 	<title>Assemblies of God Qatar &mdash;</title>
 </head>
@@ -247,7 +248,9 @@
 					<script>
 						window.playerConfiguration = {
 							"episode": {
-								"media": { "mp3": "https://mcdn.podbean.com/mf/player-preload/9vvrv3/liveshow_202112110453.mp3" },
+								"media": {
+									"mp3": "https://mcdn.podbean.com/mf/player-preload/9vvrv3/liveshow_202112110453.mp3"
+								},
 								"title": "Love of Jesus Christ"
 							}
 						}
@@ -261,7 +264,9 @@
 					<script>
 						window.playerConfiguration = {
 							"episode": {
-								"media": { "mp3": "https://mcdn.podbean.com/mf/player-preload/9vvrv3/liveshow_202112110453.mp3" },
+								"media": {
+									"mp3": "https://mcdn.podbean.com/mf/player-preload/9vvrv3/liveshow_202112110453.mp3"
+								},
 								"title": "Love of Jesus Christ"
 							}
 						}
@@ -415,14 +420,42 @@
 						</div>
 					</div>
 				</div>
-
 			</div>
-
-
 		</div>
-
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 p-5">
+					<form action="">
+						<div class="form-group">
+							<input type="hidden" value="<?php echo date("d/m/Y H:i:s") ?>" name="names" id="names" class="form-control" placeholder=""
+								aria-describedby="helpId">
+						</div>
+						<div class="form-group">
+							<label for="names">Your Name</label>
+							<input type="text" name="names" id="names" class="form-control" placeholder=""
+								aria-describedby="helpId">
+						</div>
+						<div class="form-group">
+							<label for="names">Testimony</label>
+							<input type="text" name="names" id="names" class="form-control" placeholder=""
+								aria-describedby="helpId">
+						</div>
+						<div class="form-group mt-3">
+							<button class="btn btn-dark"> Submit</button>
+						</div>
+					</form>
+				</div>
+				<div class="col-sm-6 p-5">
+					<h3 class="text-success">You have a testimony?</h3>
+					<p>Your story has the power to inspire and uplift others! By sharing how God has worked in your life,
+						you can encourage someone who may be facing similar challenges or searching for hope.
+						Whether it's a story of healing, provision, transformation, or answered prayers,
+						we would love to hear and celebrate what God has done in your life.
+						Your testimony can be a beacon of faith and a reminder of His unfailing love.</p>
+				</div>
+			</div>
+		</div>
 	</div>
-
 
 	<div class="section bg-white mx-2 mx-md-5 sec-services-wrap">
 		<div class="container">
@@ -543,7 +576,9 @@
 			<div class="row mt-5">
 				<div class="col-12 text-center">
 					<p class="mb-0">Copyright &copy;
-						<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash;
+						<script>
+							document.write(new Date().getFullYear());
+						</script>. All Rights Reserved. &mdash;
 						Designed with love by <a href="https://untree.co">Untree.co</a>
 						<!-- License information: https://untree.co/license/ -->
 					</p>
