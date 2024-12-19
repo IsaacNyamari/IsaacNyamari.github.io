@@ -289,6 +289,29 @@ class Testimony extends Dbh
             }
         }
     }
+    public function updateTestimonyStatus($id = null)
+    {
+        $conn = $this->connect();
+        if ($id !== null) {
+            $status = "success";
+            $sql = "UPDATE `testimonies` SET `status`=? WHERE `id`=?";
+            $stmt = mysqli_prepare($conn, $sql);
+            mysqli_stmt_bind_param($stmt, "ss", $status, $id);
+            if (mysqli_stmt_execute($stmt)) {
+                header("Content-type: Application/json");
+                $status = array(
+                    [
+                        "code" => 200,
+                        "status" => "success",
+                        "description" => "Testimony  updated successfully"
+                    ]
+                );
+                echo json_encode($status, JSON_PRETTY_PRINT);
+            } else {
+                echo mysqli_stmt_error($stmt);
+            }
+        }
+    }
     public function deleteTestimony($id = null)
     {
         $conn = $this->connect();
