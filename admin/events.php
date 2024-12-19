@@ -1,5 +1,5 @@
 <?php include("header.php") ?>
-
+<?php include("protect.php") ?>
 <body>
 
     <div class="container-fluid">

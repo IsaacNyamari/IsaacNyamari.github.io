@@ -322,5 +322,23 @@ class AddPhoto extends Dbh
     public function deletePhoto($photo_id = null)
     {
         $conn = $this->connect();
+        if ($photo_id !== null) {
+            $sql = "DELETE FROM `gallery` WHERE `photo_id`=?";
+            $stmt = mysqli_prepare($conn, $sql);
+            mysqli_stmt_bind_param($stmt, "s", $photo_id);
+            if (mysqli_stmt_execute($stmt)) {
+                header("Content-type: Application/json");
+                $status = array(
+                    [
+                        "code" => 200,
+                        "status" => "success",
+                        "description" => "Deleted successfully"
+                    ]
+                );
+                echo json_encode($status, JSON_PRETTY_PRINT);
+            } else {
+                echo mysqli_stmt_error($stmt);
+            }
+        }
     }
 }
