@@ -248,10 +248,10 @@ class Testimony extends Dbh
     {
         $id = $this->generateId();
         $conn = $this->connect();
-        if ($id !== null && $testifier !== null && $created !== null && $testimony !== null) {
-            $sql = "INSERT INTO `testimonies`(`id`, `testifier`, `testimony`, `created`) VALUES (?,?,?,?)";
+        if ($id !== null && $testifier !== null && $testimony !== null) {
+            $sql = "INSERT INTO `testimonies`(`id`, `testifier`, `testimony`) VALUES (?,?,?)";
             $stmt = mysqli_prepare($conn, $sql);
-            mysqli_stmt_bind_param($stmt, "ssss", $id, $testifier, $testimony, $created);
+            mysqli_stmt_bind_param($stmt, "sss", $id, $testifier, $testimony);
             if (mysqli_stmt_execute($stmt)) {
                 header("Content-type: Application/json");
                 $status = array(
